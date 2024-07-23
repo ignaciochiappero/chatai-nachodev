@@ -75,30 +75,31 @@ const InputForm = ({
           },
         });
       }}
-      className="w-full flex flex-row gap-2 items-center h-full mt-5"
+      className="w-full flex flex-row gap-2 items-center h-full mt-5 "
     >
-      <div className="border flex flex-row relative">
-        <Plus
+      <div className="border flex flex-row relative ">
+        {/* <Plus
           onClick={() => document.getElementById("fileInput")?.click()} // Click event handler
-          className="cursor-pointer p-3 h-10 w-10 stroke-stone-500"
+          className="cursor-pointer p-3 h-10 w-10 stroke-stone-200"
         />
-        <SelectedImages images={images} setImages={setImages} />
+        <SelectedImages images={images} setImages={setImages} /> */}
       </div>
-      <input
+      {/* <input
         className="hidden"
         id="fileInput"
         type="file"
         accept="image/*"
         multiple
         onChange={handleImageSelection}
-      />
+      /> */}
       <input
         type="text"
-        placeholder={isLoading ? "Generating . . ." : "ask something . . . "}
+        placeholder={isLoading ? "Generando . . ." : "Preguntar algo. . . "}
         value={input}
         disabled={isLoading}
         onChange={handleInputChange}
-        className="border-b border-dashed outline-none w-full py-2 text-[#0842A0] placeholder:text-[#0842A099] text-right focus:placeholder-transparent disabled:bg-transparent"
+        className="border outline-none w-full py-2 text-[#ffffff] placeholder:text-[#8f8f8f] text-right focus:placeholder-transparent disabled:bg-transparent rounded-lg bg-gray-950"
+        
       />
       <button
         type="submit"
@@ -107,10 +108,10 @@ const InputForm = ({
         {isLoading ? (
           <Loader2
             onClick={stop}
-            className="p-3 h-10 w-10 stroke-stone-500 animate-spin"
+            className="p-3 h-10 w-10 stroke-stone-200 animate-spin"
           />
         ) : (
-          <Send className="p-3 h-10 w-10 stroke-stone-500" />
+          <Send className="p-3 h-10 w-10 stroke-stone-200" />
         )}
       </button>
     </form>

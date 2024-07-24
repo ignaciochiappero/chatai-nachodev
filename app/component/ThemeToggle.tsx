@@ -1,11 +1,10 @@
-"use client"
+"use client";
 import { useState, useEffect } from 'react';
 import { Sun, Moon } from "lucide-react";
 
-
-
 const ThemeToggle = () => {
   const [theme, setTheme] = useState('light');
+  const [isRotating, setIsRotating] = useState(false);
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -16,12 +15,18 @@ const ThemeToggle = () => {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    setIsRotating(true);
+    setTimeout(() => {
+      setTheme(theme === 'light' ? 'dark' : 'light');
+      setIsRotating(false);
+    }, 300); // Duración de la animación en milisegundos
   };
 
   return (
     <button onClick={toggleTheme} className="p-2 rounded-full bg-gray-200 dark:bg-gray-900">
-      {theme === 'light' ? <Sun /> : <Moon />}
+      <div className={isRotating ? 'rotate' : ''}>
+        {theme === 'light' ? <Sun /> : <Moon />}
+      </div>
     </button>
   );
 };

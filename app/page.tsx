@@ -1,43 +1,32 @@
 "use client";
 import { useChat } from "ai/react";
-import {
-  Bot,
-  Loader,
-  Loader2,
-  MoreHorizontal,
-  Plus,
-  Send,
-  User2,
-  X,
-} from "lucide-react";
-import Image from "next/image";
-import Markdown from "./component/markdown";
+import { Bot, Loader, Loader2, MoreHorizontal, Plus, Send, User2, X } from "lucide-react";
 import { ChangeEvent, useState } from "react";
-import SelectedImages from "./component/selectedImages";
 import Messages from "./component/messages";
 import InputForm from "./component/inputForm";
 
 export default function Home() {
-  const { messages, input, handleInputChange, handleSubmit, isLoading, stop } =
-    useChat({
-      api: "api/genai",
-    });
+  const { messages, input, handleInputChange, handleSubmit, isLoading, stop } = useChat({
+    api: "api/genai",
+  });
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-12 text-lg">
-      
-      <div className="border p-2 rounded-md text-2xl">
+    <main className="flex flex-col h-screen">
+      <div className="border p-2 rounded-md text-2xl bg-white z-10 fixed top-0 left-0 w-full text-center">
         Nach-AI
       </div>
-      
-      <InputForm
-        input={input}
-        handleInputChange={handleInputChange}
-        handleSubmit={handleSubmit}
-        isLoading={isLoading}
-        stop={stop}
-      />
-      <Messages messages={messages} isLoading={isLoading} />
+      <div className="flex-grow overflow-auto p-4 pt-16"> {/* Añadido padding-top para el espacio del título */}
+        <Messages messages={messages} isLoading={isLoading} />
+      </div>
+      <div className="p-4 border-t">
+        <InputForm
+          input={input}
+          handleInputChange={handleInputChange}
+          handleSubmit={handleSubmit}
+          isLoading={isLoading}
+          stop={stop}
+        />
+      </div>
     </main>
   );
 }

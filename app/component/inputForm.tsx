@@ -1,5 +1,3 @@
-//inputForm.tsx
-
 import { Loader2, Send } from "lucide-react";
 import React, { ChangeEvent, FormEvent, useState, useRef, useEffect } from "react";
 import { ChatRequestOptions } from "ai";
@@ -84,7 +82,7 @@ const InputForm = ({
       onSubmit={handleFormSubmit}
       className="w-full max-w-3xl mx-auto flex flex-row gap-2 items-center h-full mt-5"
     >
-      <div className="border flex flex-row relative">
+      <div className="p-2 flex flex-row relative">
         {/* 
         <Plus
           onClick={() => document.getElementById("fileInput")?.click()} // Click event handler
@@ -109,7 +107,7 @@ const InputForm = ({
         value={input}
         disabled={isLoading}
         onChange={handleInputChange}
-        className="border outline-none w-full py-2 text-[#ffffff] placeholder:text-[#8f8f8f] text-left focus:placeholder-transparent disabled:bg-transparent rounded-lg bg-gray-950 resize-none overflow-hidden"
+        className="px-2 pl-4 outline-none w-full py-2 text-[#ffffff] placeholder:text-[#8f8f8f] dark:placeholder:text-[#d1d5db] text-left focus:placeholder-transparent disabled:bg-transparent rounded-full bg-gray-950 resize-none overflow-hidden"
         rows={1} // Start with a single row
         style={{ minHeight: '40px', maxHeight: '150px', lineHeight: '1.5', height: 'auto' }} // Adjust height and line height
         onInput={adjustTextareaHeight}
@@ -124,7 +122,7 @@ const InputForm = ({
             className="p-3 h-10 w-10 stroke-stone-200 animate-spin"
           />
         ) : (
-          <Send className="p-3 h-10 w-10 stroke-stone-200" />
+          <Send className="p-3 h-10 w-10 stroke-stone-200 " />
         )}
       </button>
     </form>

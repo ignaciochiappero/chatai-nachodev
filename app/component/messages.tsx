@@ -1,3 +1,5 @@
+//messages.tsx
+
 import React, { useEffect, useRef } from "react";
 import Markdown from "./markdown";
 import { Bot, User2 } from "lucide-react";

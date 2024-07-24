@@ -1,3 +1,5 @@
+//page.tsx
+
 import React from "react";
 import markdownit from "markdown-it";
 import DOMPurify from 'dompurify';

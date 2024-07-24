@@ -1,3 +1,5 @@
+//inputForm.tsx
+
 import { Loader2, Send } from "lucide-react";
 import React, { ChangeEvent, FormEvent, useState, useRef, useEffect } from "react";
 import { ChatRequestOptions } from "ai";

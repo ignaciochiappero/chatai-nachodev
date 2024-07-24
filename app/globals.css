@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,7 +22,7 @@
 body {
   margin: 0;
   color: black;
-  background: #333;
+  background: var(--background-start-rgb);
   overflow: hidden;
 }
 
@@ -54,6 +57,6 @@ body {
 
 @media (max-width: 640px) {
   .header-fixed {
-    padding-top: 5rem; /* Ajustar el valor según sea necesario */
+    padding-top: 5rem;
   }
 }

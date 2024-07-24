@@ -22,7 +22,7 @@ const Messages = ({ messages, isLoading }: Props) => {
   return (
     <div
       id="chatbox"
-      className="flex flex-col w-full max-w-3xl mx-auto text-left mt-4 gap-4 whitespace-pre-wrap overflow-auto"
+      className="flex flex-col w-full max-w-3xl mx-auto text-left mt-10 gap-4 whitespace-pre-wrap overflow-auto"
       style={{ maxHeight: "calc(100vh - 200px)" }} // Ajusta la altura según sea necesario
     >
       {messages.map((m, index) => (

@@ -34,7 +34,7 @@ export default function Home() {
             
 
             <div>
-              <span className="text-black dark:text-white font-orbitron">nIA</span> <span className="text-xs">by</span> <span className="text-sm">Nacho <span className="text-orange-500">Dev</span></span>
+              <span className="text-black dark:text-white font-orbitron">nIA</span> <span className="text-xs ">by</span> <span className="text-sm">Nacho <span className="text-orange-500">Dev</span></span>
 
             </div>
 

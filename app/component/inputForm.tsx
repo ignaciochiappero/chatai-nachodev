@@ -107,8 +107,8 @@ const InputForm = ({
         value={input}
         disabled={isLoading}
         onChange={handleInputChange}
-        className="px-2 pl-4 outline-none w-full py-2 text-[#ffffff] placeholder:text-[#8f8f8f] dark:placeholder:text-[#d1d5db] text-left focus:placeholder-transparent disabled:bg-transparent rounded-full bg-gray-600 
-        dark:bg-gray-950  resize-none overflow-y-auto"
+        className="px-2 pl-4 outline-none w-full py-2 text-[#4e4e4e] placeholder:text-[#262626] dark:placeholder:text-[#d1d5db] text-left focus:placeholder-transparent disabled:bg-transparent rounded-full bg-gray-300 
+        dark:bg-gray-900  resize-none overflow-y-auto shadow-md"
         rows={1} // Start with a single row
         style={{ minHeight: '40px', maxHeight: '150px', lineHeight: '1.5', height: 'auto' }} // Adjust height and line height
         onInput={adjustTextareaHeight}
@@ -123,7 +123,7 @@ const InputForm = ({
             className="p-3 h-10 w-10 stroke-stone-400 animate-spin"
           />
         ) : (
-          <Send className="p-3 h-10 w-10 stroke-stone-400 " />
+          <Send className="p-3 h-10 w-10 stroke-stone-400 hover:stroke-slate-950 transition  dark:hover:stroke-slate-50  "  />
         )}
       </button>
     </form>

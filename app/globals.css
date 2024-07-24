@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,18 +18,9 @@
 
 body {
   margin: 0;
-  color: var(--foreground-rgb);
-  background: var(--background-start-rgb);
-  overflow: hidden;
-  font-family: 'Inter', sans-serif;
-}
-
-::placeholder {
-  color: #8f8f8f; /* Color para el modo claro */
-}
-
-.dark ::placeholder {
-  color: #d1d5db; /* Color para el modo oscuro */
+  color: black;
+  background: #333;
+  overflow: hidden
 }
 
 @layer utilities {
@@ -40,6 +29,7 @@ body {
   }
 }
 
+
 #chatbox a {
   color: #0842a0;
   font-weight: bold;
@@ -47,6 +37,7 @@ body {
 
 ::-webkit-scrollbar {
   width: 8px;
+
 }
 
 ::-webkit-scrollbar-track {
@@ -61,10 +52,4 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
-}
-
-@media (max-width: 640px) {
-  .header-fixed {
-    padding-top: 5rem;
-  }
 }

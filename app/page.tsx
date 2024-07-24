@@ -12,17 +12,17 @@ export default function Home() {
   });
 
   return (
-    <main className="flex flex-col h-screen bg-white dark:bg-gray-900 text-black dark:text-white font-sans">
-      <div className=" p-2 rounded-md text-2xl bg-white dark:bg-gray-800 z-10 fixed top-0 left-0 w-full text-center">
+    <main className="flex flex-col h-screen bg-white dark:bg-gray-900 text-black dark:text-white font-sans overflow-hidden">
+      <div className="p-2  text-2xl bg-gray-300 dark:bg-gray-800 z-10 fixed top-0 left-0 w-full text-center">
         <div className="flex justify-between items-center px-4">
-          <span>Nach-AI</span>
+          <span className="text-black dark:text-white">Nach-AI</span>
           <ThemeToggle /> {/* Añade el ThemeToggle aquí */}
         </div>
       </div>
       <div className="flex-grow overflow-auto p-4 pt-20">
         <Messages messages={messages} isLoading={isLoading} />
       </div>
-      <div className="p-4 dark:bg-gray-800 ">
+      <div className="p-4 bg-gray-100 dark:bg-gray-800">
         <InputForm
           input={input}
           handleInputChange={handleInputChange}

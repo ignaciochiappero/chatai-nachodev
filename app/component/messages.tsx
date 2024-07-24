@@ -29,15 +29,15 @@ const Messages = ({ messages, isLoading }: Props) => {
         <div
           key={m.id || index}
           className={`p-4 shadow-md rounded-md ml-10 relative ${
-            m.role === "user" ? "bg-gray-900 text-white" : "bg-gray-100 text-black"
+            m.role === "user" ? " bg-gray-400 dark:bg-gray-950 text-white" : "bg-gray-100 text-black"
           }`}
         >
           <Markdown text={m.content} />
           {m.role === "user" ? (
-            <User2 className="absolute -left-10 top-2 border rounded-full p-1 shadow-lg" />
+            <User2 className="absolute -left-10 top-2 border rounded-full p-1 shadow-lg  dark:shadow-pink-50 dark:shadow-md stroke-[#000000] dark:stroke-[#ffffff]" />
           ) : (
             <Bot
-              className={`absolute top-2 -left-10 border rounded-full p-1 shadow-lg stroke-[#ffffff] ${
+              className={`absolute top-2 -left-10 border rounded-full p-1 shadow-lg dark:shadow-pink-50 dark:shadow-md stroke-[#000000] dark:stroke-[#ffffff] ${
                 isLoading && index === messages.length - 1 ? "animate-bounce" : ""
               }`}
             />

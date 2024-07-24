@@ -20,7 +20,7 @@ body {
   margin: 0;
   color: black;
   background: #333;
-  overflow: hidden
+  overflow: hidden;
 }
 
 @layer utilities {
@@ -29,7 +29,6 @@ body {
   }
 }
 
-
 #chatbox a {
   color: #0842a0;
   font-weight: bold;
@@ -37,7 +36,6 @@ body {
 
 ::-webkit-scrollbar {
   width: 8px;
-
 }
 
 ::-webkit-scrollbar-track {
@@ -52,4 +50,10 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+@media (max-width: 640px) {
+  .header-fixed {
+    padding-top: 5rem; /* Ajustar el valor según sea necesario */
+  }
 }

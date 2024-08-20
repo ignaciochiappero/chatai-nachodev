@@ -107,7 +107,7 @@ const InputForm = ({
         value={input}
         disabled={isLoading}
         onChange={handleInputChange}
-        className="px-2 pl-4 outline-none w-full py-2 text-[#c2c2c2] placeholder:text-[#262626] dark:placeholder:text-[#d1d5db] text-left focus:placeholder-transparent disabled:bg-transparent rounded-full bg-gray-300 
+        className="px-2 pl-4 outline-none w-full py-2 text-[#505050] dark:text-[#a9a9a9] placeholder:text-[#262626] dark:placeholder:text-[#d1d5db] text-left focus:placeholder-transparent disabled:bg-transparent rounded-full bg-gray-300 
         dark:bg-gray-900  resize-none overflow-y-auto shadow-md"
         rows={1} // Start with a single row
         style={{ minHeight: '40px', maxHeight: '150px', lineHeight: '1.5', height: 'auto' }} // Adjust height and line height

@@ -19,6 +19,7 @@ const InputForm = ({
 }: Props) => {
   const [images, setImages] = useState<string[]>([]);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+  const [isTextareaExpanded, setIsTextareaExpanded] = useState(false);
 
   const handleImageSelection = async (event: ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
@@ -58,6 +59,13 @@ const InputForm = ({
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto';
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+
+      // Cambia el estado para modificar el estilo cuando el textarea se expande
+      if (textareaRef.current.scrollHeight > 40) {
+        setIsTextareaExpanded(true);
+      } else {
+        setIsTextareaExpanded(false);
+      }
     }
   };
 
@@ -80,7 +88,7 @@ const InputForm = ({
   return (
     <form
       onSubmit={handleFormSubmit}
-      className="w-full max-w-3xl mx-auto flex flex-row gap-2 items-center h-full mt-5 overflow-hidden"
+      className="w-full max-w-3xl mx-auto flex flex-row gap-2 items-start h-full mt-5 overflow-hidden"
     >
       <div className="p-2 flex flex-row relative overflow-hidden">
         {/* 
@@ -107,8 +115,9 @@ const InputForm = ({
         value={input}
         disabled={isLoading}
         onChange={handleInputChange}
-        className="px-2 pl-4 outline-none w-full py-2 text-[#505050] dark:text-[#a9a9a9] placeholder:text-[#262626] dark:placeholder:text-[#d1d5db] text-left focus:placeholder-transparent disabled:bg-transparent rounded-full bg-gray-300 
-        dark:bg-gray-900  resize-none overflow-y-auto shadow-md"
+        className={`px-2 pl-4 outline-none w-full py-2 text-[#505050] dark:text-[#a9a9a9] placeholder:text-[#262626] dark:placeholder:text-[#d1d5db] text-left focus:placeholder-transparent disabled:bg-transparent ${
+          isTextareaExpanded ? "rounded-3xl" : "rounded-full"
+        } bg-gray-300 dark:bg-gray-900 resize-none overflow-y-auto shadow-md`}
         rows={1} // Start with a single row
         style={{ minHeight: '40px', maxHeight: '150px', lineHeight: '1.5', height: 'auto' }} // Adjust height and line height
         onInput={adjustTextareaHeight}
